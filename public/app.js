@@ -6,7 +6,16 @@ $.getJSON("/articles", function(data) {
   }
 });
 
-
+$("#scrapeButton").on("click", function() {
+ $.ajax({
+   method: "GET",
+   url: "/scrape/"
+ }).done( function(data) {
+   console.log(data);
+   console.log("Data Scrapped");
+  location.reload();
+ });
+});
 
 $(document).on("click", "p", function() {
 
